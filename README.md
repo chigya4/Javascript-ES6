@@ -60,3 +60,33 @@ obj.foo();
 > Comma operator can be used to combine expressions to avoid {} braces and use () parantheses.
 > Be careful while using .bind(), .call() or .apply() as arrow function wont have its own this.
 
+**let vs var**
+```
+function foo(x,y) {
+    var z = x * 2;
+
+    if (x > y) {
+        let tmp = x;
+        x = y;
+        y = tmp;
+    }
+
+    for(let i=0; i<10; i++) {
+        // ..
+    }
+}
+```
+> In the above code z can be var as it tells z can be used anywhere.
+> Use let if the variable is to be used in the block.
+
+> Its not let is the new var, its let and var.
+
+```
+try {
+    let z = bar ( x*2 )
+} catch (err) {
+    // ..
+}
+```
+> An error may be z is undefined even though it is declared.
+> Can be fixed by declaring it before try block or using var.

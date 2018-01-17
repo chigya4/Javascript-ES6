@@ -83,10 +83,40 @@ function foo(x,y) {
 
 ```
 try {
-    let z = bar ( x*2 )
+    let z = bar ( x * 2 )
 } catch (err) {
     // ..
 }
 ```
 > An error may be z is undefined even though it is declared.
 > Can be fixed by declaring it before try block or using var.
+
+> Make variable declaration to use as close as possible when used the first time.
+
+```
+for (let i = 0; i<10; i++) {
+    // ..
+}
+```
+> Here the let i variable gets intialized 10 times each i with incremented value.
+
+**const**
+> A variable that cannot be reassigned
+```
+const x = [1,2,3];
+x[0] = 42; // x = [42, 2, 3]
+```
+> To make x immutable use Object.freeze([1,2,3]) along with this var could be used.
+
+> Use const only for constant, const PI = 3.14
+
+**Lazy Expression**
+```
+var x = 1;
+
+function foo( x = 2, f = function() { return x; } ){
+ 	var x = 5;	
+  	console.log( f() );
+}
+foo(); // 2 How?? Closure??
+```

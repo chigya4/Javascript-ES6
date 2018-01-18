@@ -111,6 +111,7 @@ x[0] = 42; // x = [42, 2, 3]
 > Use const only for constant, const PI = 3.14
 
 **Default values**
+
 ***imperative way***
 ```
 function foo(x) {
@@ -132,6 +133,7 @@ foo(undefined); // 10
 foo.apply(null, []); // 10
 foo.apply(null, [,]); // 10
 ```
+
 **Lazy Expression**
 ```
 var x = 1;

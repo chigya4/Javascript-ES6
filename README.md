@@ -119,10 +119,10 @@ function foo(x) {
 }
 
 foo(); // 10
-foo(0); // 0 .. WTH!!
+foo(0); // 0
 ```
 
-***declaraive way***
+***declarative way***
 ```
 function foo(x = 10) {
     console.log(x);
@@ -144,3 +144,21 @@ function foo( x = 2, f = function() { return x; } ){
 }
 foo(); // 2 How?? Closure??
 ```
+
+**Gather and Spread Operators**
+```
+function foo( ...args ) {
+    bar(10, ...args); // args.unshift(10)
+}
+```
+>
+```
+function foo(x, y, ...rest){
+    return rest;
+}
+var a = [1, 2, 3];
+var b = [4, 5, 6];
+
+foo(...a, ...b); // x = 1, y =2 .... 
+```
+

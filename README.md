@@ -151,7 +151,7 @@ function foo( ...args ) {
     bar(10, ...args); // args.unshift(10)
 }
 ```
->
+
 ```
 function foo(x, y, ...rest){
     return rest;
@@ -163,5 +163,32 @@ foo(...a, ...b); // x = 1, y = 2 ....
 ```
 
 **Babel**
+
 [Babel](https://babeljs.io/)
+
+**Array Destructuring**
+```
+fucntion foo() {
+    return [1, 2, 3];
+}
+
+var [a, b, c] = foo();
+```
+> LHS and RHS need not be of same size, can be more or less
+
+```
+Defualt values
+
+function foo() {
+    return null;
+}
+
+var [
+    a,
+    b = 10,
+    c
+] = foo() || []; // expect array type return
+```
+
+
 

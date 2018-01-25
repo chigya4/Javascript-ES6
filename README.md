@@ -1,5 +1,4 @@
 # Javascript-ES6 Notes
-- [1. The Arrow Function ](#1-The Arrow Function)
 
 ## 1. The Arrow Function
 
@@ -210,7 +209,7 @@ var a,b,c,args;
     b = 42,
     c,
     ...args
-] = foo() || []; //args will have [ [4, 5, 6] ]
+] = foo() || []; //args will have [ [4, 5, 6] ] :astonished:
 ```
 
 nested array destructuring

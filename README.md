@@ -190,5 +190,64 @@ var [
 ] = foo() || []; // expect array type return
 ```
 
+Dumping variables
+```
+swaping made easy
+var x = 10, y = 20;
+[x,y] = [y,x]
+```
 
+```
+function foo() {
+    return [1, 2, 3, [4, 5, 6] ];
+}
+
+var a,b,c,args;
+
+[
+    a,
+    b = 42,
+    c,
+    ...args
+] = foo() || []; //args will have [ [4, 5, 6] ]
+```
+
+nested array destructuring
+```
+function foo() {
+    return [1, 2, 3, [4, 5, 6] ];
+}
+
+var a,b,c,d,e;
+
+[
+    a,
+    b = 42,
+    c,
+    [
+        d,
+        ,
+        e
+    ]
+] = foo() || []; 
+```
+> or
+```
+function foo() {
+    return [1, 2, 3, [4, 5, 6] ];
+}
+
+//var a,b,c,d,e;
+
+var [
+    a,
+    b = 42,
+    c,
+    [
+        d,
+        ,
+        e
+    ]
+] = foo() || []; 
+```
 

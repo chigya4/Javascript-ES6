@@ -1,6 +1,7 @@
 # Javascript-ES6 Notes
+- [1. The Arrow Function ](#1-The Arrow Function)
 
-## The Arrow Function
+## 1. The Arrow Function
 
 **Simple example**
 ```

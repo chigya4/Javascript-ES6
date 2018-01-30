@@ -250,7 +250,7 @@ var [
     ]
 ] = foo() || []; 
 ```
-This freaked me out 
+> This freaked me out
 ```
 function foo() {
     return [1, 2, 3, [4, 5, 6] ];
@@ -261,4 +261,17 @@ var a,b;
 var x = [a,b] = foo();
 
 x; // [1, 2, 3, [4, 5, 6] ]
+```
+> Multiple destructuring
+```
+var a,b,vals,c,d;
+
+[
+    ,,,
+    [c, d]
+] =
+
+[a, b, ...vals] =
+
+foo()
 ```

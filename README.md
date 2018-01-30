@@ -209,7 +209,7 @@ var a,b,c,args;
     b = 42,
     c,
     ...args
-] = foo() || []; //args will have [ [4, 5, 6] ] :astonished:
+] = foo() || []; //args will have [ [4, 5, 6] ]
 ```
 
 nested array destructuring
@@ -250,4 +250,15 @@ var [
     ]
 ] = foo() || []; 
 ```
+This freaked me out 
+```
+function foo() {
+    return [1, 2, 3, [4, 5, 6] ];
+}
 
+var a,b;
+
+var x = [a,b] = foo();
+
+x; // [1, 2, 3, [4, 5, 6] ]
+```

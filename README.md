@@ -128,7 +128,7 @@ function foo(x = 10) {
     console.log(x);
 }
 foo(); // 10
-foo(0); // 0 .. WTH!!
+foo(0); // 0
 foo(undefined); // 10
 foo.apply(null, []); // 10
 foo.apply(null, [,]); // 10
@@ -262,7 +262,7 @@ var x = [a,b] = foo();
 
 x; // [1, 2, 3, [4, 5, 6] ]
 ```
-> Multiple destructuring
+Multiple destructuring
 ```
 var a,b,vals,c,d;
 
@@ -275,3 +275,42 @@ var a,b,vals,c,d;
 
 foo()
 ```
+
+Object destructuring
+```
+function foo() {
+    return { a:1, b:2, c:3 };
+}
+
+var obj;
+
+var {
+    a = 10,
+    b: X = 42,
+    c,
+    d
+} = obj = foo() || {}; // a=1, c=3, X=2
+```
+
+Nested Object destructuring
+```
+function foo() {
+    return { a:1, b:2, c:3,
+        d: {
+            e: 4
+        } 
+    };
+}
+
+var {
+    a = 10,
+    b: X = 42,
+    c,
+    d: {      // can have multiple d properties d:X,d:Y..
+        e
+    } = {}
+} = foo() || {}; // e=4
+```
+> left-right-left processing - { a: {} = 2 } = ..
+
+> If declaring variables should wrap object in ( )

@@ -315,7 +315,7 @@ var {
 
 > If declaring variables should wrap object in ( )
 
->> 1[0] is legal because in JS does boxing (something to do with wraping in object)
+> 1[0] is legal because in JS does boxing (something to do with wraping in object)
 
 Default values
 ```

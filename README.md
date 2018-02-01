@@ -168,7 +168,7 @@ foo(...a, ...b); // x = 1, y = 2 ....
 
 **Array Destructuring**
 ```
-fucntion foo() {
+function foo() {
     return [1, 2, 3];
 }
 
@@ -314,3 +314,26 @@ var {
 > left-right-left processing - { a: {} = 2 } = ..
 
 > If declaring variables should wrap object in ( )
+
+>> 1[0] is legal because in JS does boxing (something to do with wraping in object)
+
+Default values
+```
+function foo( [a,b,c] = []) {
+    console.log(a, b, c);
+}
+
+foo( [1,2,3] );
+```
+
+```
+function foo( {a,b,c} = {}) {
+    console.log(a, b, c);
+}
+
+foo( {
+    a:1,
+    b:2,
+    c:3
+} );
+```

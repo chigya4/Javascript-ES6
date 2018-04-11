@@ -212,7 +212,7 @@ var a,b,c,args;
 ] = foo() || []; //args will have [ [4, 5, 6] ]
 ```
 
-nested array destructuring
+Nested Array destructuring
 ```
 function foo() {
     return [1, 2, 3, [4, 5, 6] ];
@@ -336,4 +336,25 @@ foo( {
     b:2,
     c:3
 } );
+```
+
+**Concise properties and Methods**
+//TODO
+
+**Template Strings**
+```
+var name = "Test";
+var orderName = "123";
+var total = 200.9;
+
+var msg = `Hello, ${name}, your
+order (#${orderName}) was $${total}.`;
+msg; 
+//"Hello, Test, your
+//order (#123) was $200.9."
+
+var msg = `Hello, ${name}, your \
+order (#${orderName}) was $${total}.`;
+msg; 
+//"Hello, Test, your order (#123) was $200.9."
 ```

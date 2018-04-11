@@ -339,7 +339,7 @@ foo( {
 ```
 
 **Concise properties and Methods**
-//TODO
+> //TODO
 
 **Template Strings**
 ```
@@ -357,4 +357,30 @@ var msg = `Hello, ${name}, your \
 order (#${orderName}) was $${total}.`;
 msg; 
 //"Hello, Test, your order (#123) was $200.9."
+```
+Syntax 
+${JS-Expression}
+
+**Tag Functions**
+
+```
+function foo(strings, ...values) {
+    console.log(strings);
+    console.log(values);
+    var str = "";
+    for (var i = 0; i < strings.length; i++) {
+        if (i > 0) str += values[i-1];
+        str += strings[i];
+    }
+    return str;
+}
+
+var name = "Test";
+var orderName = "123";
+var total = 200.9;
+
+var msg = foo`Hello, ${name}, your
+order (#${orderName}) was $${total}.`;
+msg;
+//"Hello, Test, your order (#123) was $200.9." 
 ```
